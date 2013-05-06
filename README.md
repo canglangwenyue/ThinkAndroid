@@ -247,7 +247,7 @@ public class ThinkAndroidDemoActivity extends TAActivity {
 		});
 ```
 ### 使用http模块上传文件 或者 提交数据 到服务器（post方法）
-文件上传到服务器，服务器如何接收，请查看[这里](http://www.oschina.net/question/105836_85825)
+文件上传到服务器，服务器如何接收，请查看[这里](http://www.thinkandroid.cn)
 
 ```java
 RequestParams params = new RequestParams();
