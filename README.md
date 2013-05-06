@@ -45,7 +45,15 @@
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <!-- 网络状态检测权限  根据需要添加-->
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+     配置：
+     <receiver android:name="com.ta.util.netstate.TANetworkStateReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
  <application
         android:name="com.ta.TAApplication" >
       application必须配置以上格式
@@ -606,6 +614,6 @@ downloadManager = DownloadManager.getDownloadManager();
 ```
 
 
-#关于作者
+#关于作者(白猫)
 * ThinkAndroid交流网站：[http://www.thinkandroid.cn](http://www.thinkandroid.cn)
 * ThinkAndroid交流QQ群 ： 169415162
