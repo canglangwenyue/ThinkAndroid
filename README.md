@@ -601,7 +601,6 @@ downloadManager = DownloadManager.getDownloadManager();
      <receiver android:name="com.ta.util.netstate.TANetworkStateReceiver" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.gzcpc.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 ```
