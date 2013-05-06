@@ -569,7 +569,41 @@ downloadManager = DownloadManager.getDownloadManager();
 当网络状态改变时，对其进行监测。
 
 ```java
- 
+ TANetworkStateReceiver.registerObserver(new TANetChangeObserver()
+		{
+			@Override
+			public void onConnect(netType type)
+			{
+				// TODO Auto-generated method stub
+				super.onConnect(type);
+				Toast.makeText(TestActivity.this, "onConnect",
+						Toast.LENGTH_SHORT).show();
+			}
+
+			@Override
+			public void onDisConnect()
+			{
+				// TODO Auto-generated method stub
+				super.onDisConnect();
+				Toast.makeText(TestActivity.this, "onDisConnect",
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		
+		需要开启权限
+		  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    
+    配置：
+     <receiver android:name="com.ta.util.netstate.TANetworkStateReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.gzcpc.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
 ```
 
 
